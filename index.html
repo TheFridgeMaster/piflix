@@ -1,15 +1,9 @@
 
 <?php
-$form = ($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-  $data = array('-s ' . $_POST["ssid"], ' -p ' . $_POST["wpa2"], ' -ip ' . $_POST["vpnaddr"], ' -u ' . $_POST["vpnuser"], ' -pw ' . $_POST["vpnpass"]);
-
-  $pythonScript = "/var/www/scripts/wrconf.py";
-  $cmd = array("python", $pythonScript, implode($data));
-  $cmdText = implode(' ', $cmd);
-
-  echo "Running command: " . $cmdText . "\n";
-  $result = shell_exec($cmdText);
+    echo "<pre>";
+    print_r($_POST);
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -53,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         <img src="piflix.png" class="img-responsive pull-right" width="400" style="margin-top:50%;" />
       </div>
     <div class="col-xs-12 col-md-4">
-    <form action="" method="post">
+    <form action="" method="POST">
       <div class="row" >
         <div align="center" class="form-group col-xs-12">
           <label for="ssid" style="color: white;">SSID</label>
