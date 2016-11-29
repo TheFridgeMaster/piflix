@@ -2,7 +2,7 @@
 <?php
 $form = ($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-  $data = array('-s ' . $_POST["ssid"], ' -p ' . $_POST["wpa2"], ' -ip ' . $_POST["vpnaddr"], ' -u ' . $_POST["vpnuser"], ' -pw ' . $_POST["vpnpass"]);
+  $data = array('-s ' . $form["ssid"], ' -p ' . $form["wpa2"], ' -ip ' . $form["vpnaddr"], ' -u ' . $form["vpnuser"], ' -pw ' . $form["vpnpass"]);
 
   $pythonScript = "/var/www/scripts/wrconf.py";
   $cmd = array("python", $pythonScript, implode($data));
